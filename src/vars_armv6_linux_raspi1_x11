@@ -1,0 +1,19 @@
+# This file is for an ARM v6 Raspberry Pi 1 class computer
+
+TARGET = gsplusx
+OBJECTS = $(OBJECTS1) $(TFEOBJ) $(ATOBJ) $(PCAPOBJ) xdriver.o
+CC = gcc
+CCOPTS = -O2 -Wall -fomit-frame-pointer -std=gnu99 -march=armv6
+OPTS = -DGSPORT_LITTLE_ENDIAN -DHAVE_TFE -DTOGGLE_STATUS -DHAVE_ATBRIDGE
+SUFFIX =
+NAME = gsplusx
+LDFLAGS =
+LDOPTS =
+LD = g++
+EXTRA_LIBS = -lXext -ldl
+EXTRA_SPECIALS =
+
+AS = cc
+PERL = perl
+
+XOPTS = -I/usr/X11R6/include
