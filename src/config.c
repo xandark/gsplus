@@ -135,7 +135,7 @@ int g_config_gsport_auto_update = 1;
 int g_config_gsport_update_needed = 0;
 
 const char *g_config_gsport_name_list[] = {
-		"config.txt", "config.gsport", "gsport_conf", ".config.gsport", 0
+		"config.txt", "config.gsplus", "gsplus_conf", ".config.gsplus", 0
 };
 
 int	g_highest_smartport_unit = -1;
@@ -370,7 +370,7 @@ Cfg_menu g_cfg_devel_menu[] = {
 };
 
 Cfg_menu g_cfg_main_menu[] = {
-{ "GSport Configuration", g_cfg_main_menu, 0, 0, CFGTYPE_MENU },
+{ "GSplus Configuration", g_cfg_main_menu, 0, 0, CFGTYPE_MENU },
 { "Disk Configuration", g_cfg_disk_menu, 0, 0, CFGTYPE_MENU },
 { "Joystick Configuration", g_cfg_joystick_menu, 0, 0, CFGTYPE_MENU },
 { "ROM File Selection", g_cfg_rom_menu, 0, 0, CFGTYPE_MENU },
@@ -591,7 +591,7 @@ cfg_text_screen_dump()
 	int	pos;
 	int	i, j;
 
-	filename = "gsport.screen.dump";
+	filename = "GSplus.screen.dump";
 	printf("Writing text screen to the file %s\n", filename);
 	ofile = fopen(filename, "w");
 	if(ofile == 0) {
@@ -1255,7 +1255,7 @@ config_write_config_gsport_file()
 		return;
 	}
 
-	fprintf(fconf, "# GSport configuration file version %s\n",
+	fprintf(fconf, "# GSplus configuration file version %s\n",
 						g_gsport_version_str);
 
 	for(i = 0; i < MAX_C7_DISKS + 4; i++) {
