@@ -24,6 +24,7 @@ clean:
 	- rm -f $(OBJECTS)
 	- rm -f $(TARGET)
 	- rm -f compile_time.o
+	- rm -f xdriver.o
 	- rm -f 8inst_c.h
 	- rm -f 16inst_c.h
 
@@ -44,6 +45,7 @@ gsplusx: $(OBJECTS) compile_time.o
 	$(LD) $(CCOPTS) $(LDOPTS) $(OBJECTS) compile_time.o $(LDFLAGS) -o $(NAME)$(SUFFIX) $(XLIBS) $(EXTRA_LIBS) -lX11
 	echo $(OBJECTS)
 	mv gsplusx ..
+	cp -f ../config.template ../config.txt 
 
 # NOT CURRENTLY SUPPORTED 
 # Linux framebuffer builds:
